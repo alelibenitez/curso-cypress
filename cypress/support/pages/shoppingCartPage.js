@@ -17,8 +17,7 @@ export class ShoppingCartPage {
     }
 
     /*verficarPrecioTotal(precio1, precio2){
-        return precioTotal = precio1 + precio2;
-        //return cy.get(`[id = '${precio}']`);    
+        return precioTotal = precio1 + precio2;   
     }
 
     verficarPrecioTotal(precio){
