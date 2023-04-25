@@ -37,9 +37,13 @@ describe('Pre-entrega', () => {
         productPage.seleccionarProducto(datosFixture.products.prod2.name);
         productPage.closeMessageAlert();
         productPage.goToShoppingCart();
-        shoppingCartPage.getShoppingCartProduct(datosFixture.products.prod1.name).should('have.text',datosFixture.products.prod1.name );
-        shoppingCartPage.getShoppingCartProduct(datosFixture.products.prod2.name).should('have.text',datosFixture.products.prod2.name );
-
-
+        shoppingCartPage.verificarProducto(datosFixture.products.prod1.name).should('have.text',datosFixture.products.prod1.name );
+        shoppingCartPage.verificarProducto(datosFixture.products.prod2.name).should('have.text',datosFixture.products.prod2.name );
+        shoppingCartPage.verificarPrecio(datosFixture.products.prod1.price).should('have.text', '$'+ datosFixture.products.prod1.price);
+        shoppingCartPage.verificarPrecio(datosFixture.products.prod2.price).should('have.text', '$'+ datosFixture.products.prod2.price);
+        shoppingCartPage.clickShowTotalPrice()
+        shoppingCartPage.verficarPrecioTotal().should('have.text', 'Total $ 38');
+        //shoppingCartPage.verificarPrecioTotal(datosFixture.products.prod1.price,datosFixture.products.prod2.price ).should('have.text', 'Total $' + (datosFixture.products.prod1.price + datosFixture.products.prod2.price));
+        //shoppingCartPage.verificarPrecioTotal('datosFixture.products.prod1.price + datosFixture.products.prod2.price').should('have.text', 'Total $' + (datosFixture.products.prod1.price + datosFixture.products.prod2.price));
     });    
 });
