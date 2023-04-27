@@ -13,14 +13,6 @@ export class ShoppingCartPage {
     }
 
     verficarPrecioTotal(){
-        cy.get("div[class = 'css-1g7ucpo']");   
+        return cy.get('p[id = "price"]');   
     }
-
-    /*verficarPrecioTotal(precio1, precio2){
-        return precioTotal = precio1 + precio2;   
-    }
-
-    verficarPrecioTotal(precio){
-        return cy.get(`[id = '${precio}']`);    
-    }*/
 };

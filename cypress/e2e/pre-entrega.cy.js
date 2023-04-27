@@ -42,8 +42,8 @@ describe('Pre-entrega', () => {
         shoppingCartPage.verificarPrecio(datosFixture.products.prod1.price).should('have.text', '$'+ datosFixture.products.prod1.price);
         shoppingCartPage.verificarPrecio(datosFixture.products.prod2.price).should('have.text', '$'+ datosFixture.products.prod2.price);
         shoppingCartPage.clickShowTotalPrice()
-        shoppingCartPage.verficarPrecioTotal().should('have.text', 'Total $ 38');
-        //shoppingCartPage.verificarPrecioTotal(datosFixture.products.prod1.price,datosFixture.products.prod2.price ).should('have.text', 'Total $' + (datosFixture.products.prod1.price + datosFixture.products.prod2.price));
-        //shoppingCartPage.verificarPrecioTotal('datosFixture.products.prod1.price + datosFixture.products.prod2.price').should('have.text', 'Total $' + (datosFixture.products.prod1.price + datosFixture.products.prod2.price));
+        shoppingCartPage.verficarPrecioTotal().should('have.text',`${datosFixture.products.prod1.price + datosFixture.products.prod2.price}`);
+        //shoppingCartPage.verficarPrecioTotal().should('have.text',datosFixture.products.prod1.price + datosFixture.products.prod2.price);
+       
     });    
 });
