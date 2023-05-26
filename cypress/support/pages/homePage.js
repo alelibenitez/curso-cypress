@@ -5,4 +5,8 @@ export class HomePage {
     clickonlineShop() {
         cy.contains(this.onlineShopLink).click();
     };
+
+    /*clickonlineShop() {
+        cy.get('#onlineshoplink').click();
+    };*/
 };

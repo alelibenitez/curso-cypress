@@ -1,11 +1,5 @@
 {
-    "user": {
-        "username":"pushingit",
-        "password": "123456!"
-
-    },
-
-    "products":{
+"products":{
         "prod1":{
             "name": "White Pants",
             "price": 20
@@ -14,5 +8,11 @@
             "name": "Pink Sweater",
             "price": 18
         }        
-    }
+    },
+
+"checkout":{
+        "nombre": "Alejandra",
+        "apellido":"Benitez",
+        "tarjeta": 1234567891234567             
+        }
   }
