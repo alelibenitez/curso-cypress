@@ -75,12 +75,12 @@ describe('Entrega Final', () => {
             
     });   
     
-    /*after(() => {
+    after(() => {
         cy.request({
             url:`https://pushing-it.onrender.com/api/deleteuser/${bodyRequest.username}`,
             method: 'DELETE'
         }).then(respuesta=>{
             expect(respuesta.status).to.be.equal(200)
         })      
-    })*/
+    })
 });
