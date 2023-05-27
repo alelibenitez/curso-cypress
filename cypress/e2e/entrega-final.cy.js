@@ -30,12 +30,12 @@ describe('Entrega Final', () => {
         
         const numero = Math.floor(Math.random() * 1000)
         const bodyRequest = {
-                username: `pushingit ${numero}`,
-                password: '123456!',
-                gender:'Female',
-                day:'9',
-                month:'Abril',
-                year: '1998',        
+            username: `pushingit ${numero}`,
+            password: '123456!',
+            gender:'Female',
+            day:'9',
+            month:'Abril',
+            year: '1998',        
         }
         cy.request({
             url: 'https://pushing-it.onrender.com/api/register',
@@ -55,7 +55,10 @@ describe('Entrega Final', () => {
             }
         }).then(respuesta=>{
             expect(respuesta.status).to.be.equal(200)
+            window.localStorage.setItem('token', respuesta.body.token);
+            window.localStorage.setItem('username', respuesta.body.username)
         })
+
 
         homePage.clickonlineShop();
         productPage.seleccionarProducto(datosFixture.products.prod1.name);    
@@ -72,12 +75,12 @@ describe('Entrega Final', () => {
             
     });   
     
-    after(() => {
+    /*after(() => {
         cy.request({
             url:`https://pushing-it.onrender.com/api/deleteuser/${bodyRequest.username}`,
             method: 'DELETE'
         }).then(respuesta=>{
             expect(respuesta.status).to.be.equal(200)
         })      
-    })
+    })*/
 });
