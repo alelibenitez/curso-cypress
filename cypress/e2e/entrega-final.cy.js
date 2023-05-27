@@ -59,7 +59,7 @@ describe('Entrega Final', () => {
             window.localStorage.setItem('username', respuesta.body.username)
         })
 
-
+         
         homePage.clickonlineShop();
         productPage.seleccionarProducto(datosFixture.products.prod1.name);    
         productPage.closeMessageAlert();
@@ -72,15 +72,21 @@ describe('Entrega Final', () => {
         shoppingCartPage.verificarPrecio(datosFixture.products.prod2.price).should('have.text', '$'+ datosFixture.products.prod2.price);
         shoppingCartPage.clickShowTotalPrice()
         shoppingCartPage.verficarPrecioTotal().should('have.text',`${datosFixture.products.prod1.price + datosFixture.products.prod2.price}`);
-            
+          
+        cy.request({
+            url:`https://pushing-it.onrender.com/api/deleteuser/${bodyRequest.username}`,
+            method: 'DELETE'
+        }).then(respuesta=>{
+            expect(respuesta.status).to.be.equal(200)
+        })     
     });   
     
-    after(() => {
+    /*after(() => {
         cy.request({
             url:`https://pushing-it.onrender.com/api/deleteuser/${bodyRequest.username}`,
             method: 'DELETE'
         }).then(respuesta=>{
             expect(respuesta.status).to.be.equal(200)
         })      
-    })
+    })*/
 });
