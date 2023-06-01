@@ -15,4 +15,8 @@ export class ShoppingCartPage {
     verficarPrecioTotal(){
         return cy.get('p[id = "price"]');   
     }
+
+    clickGoToCheckout(){
+        cy.contains('button','Go to Checkout').click();
+    }
 };
