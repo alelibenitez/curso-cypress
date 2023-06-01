@@ -80,7 +80,7 @@ describe('Entrega Final', () => {
         reciptPage.verificarProd2().should('have.text', datosFixture.products.prod2.name);
         reciptPage.verificarCreditCard().should('have.text', datosFixture.checkout.tarjeta);
         reciptPage.verificarTotalPrice().should('have.text', 'You have spent $' + `${datosFixture.products.prod1.price + datosFixture.products.prod2.price}`);
-        //reciptPage.clickThankYou();
+        reciptPage.clickThankYou();
 
          
         cy.request({
